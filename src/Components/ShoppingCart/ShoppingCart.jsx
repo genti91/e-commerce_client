@@ -176,7 +176,7 @@ export default function ShoppingCart() {
                     <h4>Maybe you're interested in...</h4>
                 </div>
 
-                <div class="d-flex flex-row flex-wrap justify-content-center">
+                <div class="d-flex flex-row flex-wrap justify-content-center gap-3 mb-4">
                     <RandomHelper games={games} />
 
                 </div>

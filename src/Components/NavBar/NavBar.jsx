@@ -60,7 +60,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark " style={{ backgroundColor: "#191D2A", borderRadius: '0' }}>
+    <nav className="navbar navbar-expand-md navbar-dark" style={{ backgroundColor: "#2a2a2a", borderRadius: '0' }}>
 
       <div class="container-fluid  mt-2">
         <NavLink to="/" className='link'>

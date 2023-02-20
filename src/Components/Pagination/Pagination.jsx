@@ -21,7 +21,7 @@ export default function Pagination({ gamesPerPage, games, paginado, currentPage 
     }
 
     return (
-        <nav>
+        <nav class="mt-3">
             <ul className="pages">
                 <button onClick={previous} className="arrowsPag" disabled={currentPage === pageNums[0] ? true : false}>{"<"}</button>
                 {
