@@ -1,8 +1,49 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './CardForSale.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../../../redux/actions.js'
+import Swal from 'sweetalert2'
 
 function CardForSale({ forSale }) {
+
+  const dispatch = useDispatch()
+  let cart = useSelector(state => state.cart);
+  let userOrders = useSelector(state => state.userOrders);
+  
+
+  const addGameToCart = (id) => {
+
+  let owned = false;
+  if (userOrders) {
+    let gam = userOrders.filter((e) => e.game_id === id)
+    if (gam.length > 0) {
+      owned = true;
+    }
+  }
+
+      let fC = cart.filter(e => e === id);
+      if (owned) {
+        Swal.fire({
+          icon: 'warning',
+          text: 'You already own this game!',
+        })
+      } else if (fC.length > 0) {
+        Swal.fire({
+          icon: 'warning',
+          text: 'Game is already in cart!',
+        })
+      } else {
+        dispatch(addToCart(id)) // dispacha al carrito de compras con el id del game en la db
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Succesfully added to your cart',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+  }
 
   return (
 <div id="carouselExampleIndicators" class="carousel slide mt-5 mb-5" data-bs-ride="carousel">
@@ -10,14 +51,18 @@ function CardForSale({ forSale }) {
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
   </div>
   <div class="carousel-inner">
 
-    {[0,1,2].map((e) => (
+    {[0,1,2,3,4,5].map((e) => (
     <div class={`carousel-item ${e === 0 ? "active" : ""}`}>
       <div class="d-flex justify-content-center gap-3">
-      <div class="bg-image" style={{borderRadius:"0.7rem", height:"30rem",width:"55rem", backgroundImage:`url(${forSale[e]?.background_image})`, backgroundSize:"cover", backgroundPosition:"center"}}>
-      </div>
+      <Link to={`/detail/${forSale[e]?.id}`}>
+        <div class="bg-image" style={{borderRadius:"0.7rem", height:"30rem",width:"55rem", backgroundImage:`url(${forSale[e]?.background_image})`, backgroundSize:"cover", backgroundPosition:"center"}}></div>
+      </Link>
       <div style={{height:"30rem",width:"20rem", padding:"2rem", backgroundColor: "rgb(37,37,39,0.2)", borderRadius:"0.7rem"}}>
         <h3>{forSale[e]?.name}</h3>
         <div style={{marginBottom:"2rem", marginTop:"2rem", lineHeight:1.2,maxHeight:"16.9em", width:"100%", overflow:"hidden", textOverflow:"ellipsis", textAlign:"justify"}}>
@@ -25,7 +70,7 @@ function CardForSale({ forSale }) {
         </div>
         <div class="d-flex w-100 justify-content-between">
           <div className='price'>${forSale[e]?.price}</div>
-          <button className="buttonCart">
+          <button className="buttonCart" onClick={() => addGameToCart(forSale[e]?.id)}>
             Add to cart
           </button>
         </div>
