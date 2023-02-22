@@ -11,7 +11,7 @@ function CardSlider({platforms, i}) {
 <>
 
 
-<div class="d-flex container w-100 justify-content-center">
+<div class="d-flex container w-100 justify-content-center mb-5">
   <div class="row" style={{width:'73%'}}>
     <div class="col-md-12">
       <div id='cards' class="card-deck d-flex flex-nowrap overflow-auto gap-4">
@@ -22,10 +22,10 @@ function CardSlider({platforms, i}) {
         ))}
       </div>
 
-      <div class="d-flex justify-content-between mt-3">
-        <a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
-        <a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
-      </div>
+      {/* <div class="d-flex justify-content-between mt-3"> */}
+      {/*   <a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a> */}
+      {/*   <a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a> */}
+      {/* </div> */}
 
 
     </div>
