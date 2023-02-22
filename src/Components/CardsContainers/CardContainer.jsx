@@ -32,18 +32,18 @@ const CardContainer = () => {
   const [randomYear, SetRandomYear] = useState()
 
   useEffect(() => {
-    setInterval(() => {
+    // setInterval(() => {
       var genre = prueba[Math.floor(Math.random() * prueba.length)]
        setRandomGen(genre)
-    }, 10000);
-  },[setInterval])
+    // }, 10000);
+  },[])
 
   useEffect(() => {
-    setInterval(() => {
+    // setInterval(() => {
       var plataf = prueba2[Math.floor(Math.random() * prueba.length)]
       SetRandomPLat(plataf)  
-    }, 10000);
-  },[setInterval])
+    // }, 10000);
+  },[])
 
   const [start, setStart] = useState(0)
   const [finish, setFinish] = useState(9)
@@ -87,27 +87,20 @@ const CardContainer = () => {
   const platforms = Allproducts.filter((c) => c.platforms.find((c) => c.name === randomPlat))
   
   return (
-        <div className='d-flex flex-column mb-3 '>
-          
-          {/*   <header className={styles.s2Video}>
-              <div >
-              <video   className={styles.sVideo} onLoadedMetadata="this.muted=true" autoPlay loop  >
-                <source src={video} />
-              </video>
-              </div>
-            </header> */}
-
-          {Allproducts.length>0?<CardForSale forSale={forSale.slice(0,8)}/>:<Spinner />}
+        <div className='d-flex flex-column mb-3'>
+               {Allproducts.length>0?<CardForSale forSale={forSale.slice(0,8)}/>:<Spinner />}
           
               {/* Plataforms */}
-              {platforms.length>0?(<div className={styles.box} >
-              <h5 className="text-light"> Recomended: ({randomPlat}) </h5>
+              {platforms.length>0?(
+              <div className={styles.box} >
+                <h5 className="text-light mb-4"> Recomended {randomPlat} Games </h5>
                 <CardSlider platforms={platforms} i={1}/>
               </div>): <Spinner />}
               
               {/* Genres */}
-              {genres.length>0?(<div className={styles.box}>
-              <div ><h5 className="text-light"> Recomended: ({randomGen}) </h5></div>
+              {genres.length>0?(
+              <div className={styles.box}>
+                <h5 className="text-light mb-4"> Recomended {randomGen} Games </h5>
                 <CardSlider platforms={genres} i={2}/>
               </div>) : <Spinner />}
 

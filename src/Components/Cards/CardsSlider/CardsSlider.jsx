@@ -6,6 +6,38 @@ import CardLanding from '../../CardLanding/CardLanding.jsx'
 
 
 function CardSlider({platforms, i}) {
+
+  return (
+<>
+
+
+<div class="d-flex container w-100 justify-content-center">
+  <div class="row" style={{width:'73%'}}>
+    <div class="col-md-12">
+      <div id='cards' class="card-deck d-flex flex-nowrap overflow-auto gap-4">
+        {platforms.map((e) => (
+          <div class='mb-4'>
+            <ProductCard name={e.name} id_api={e.id_api} id={e.id} img={e.background_image} rating={e.rating} genres={e.genres} platforms={e.platforms} price={e.price} fromApi={e.fromApi} isDisabled={e.isDisabled}/> 
+          </div>
+        ))}
+      </div>
+
+      <div class="d-flex justify-content-between mt-3">
+        <a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
+        <a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+</>
+  );
+
+
+
   return (
     <div className={styles.containerCarr} class="d-flex flex-row justify-content-center align-items-center mt-3">
       <div>

@@ -49,6 +49,7 @@
   top: 0;
   /* position: relative; */
   background-size: 100% 100%;
+  border-radius: 0;
 }
 
 .ball1{
@@ -78,7 +79,7 @@
   right: 0;
   height: 100%;
   width: 100%;
-  background: rgb(18,18,18,0.93);
+  background: rgb(18,18,18,0.95);
   backdrop-filter: blur(70px);
   -webkit-backdrop-filter: blur(70px);
   overflow: hidden;
@@ -112,12 +113,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 100px;
   background-color: #bfb8b8a0;
+  background-color: rgb(18,18,18);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 100px;
-  background-color: rgba(13, 131, 147, 0.548);
   box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  background-color: rgb(37,37,39);
 }
