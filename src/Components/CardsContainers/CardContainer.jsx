@@ -20,8 +20,8 @@ const CardContainer = () => {
   const searchered = useSelector((state) => state.searchered)
   /* const AllGenres = useSelector((state) => state.usedGenres).map(e => e.name)
   const AllPlataforms = useSelector((state) => state.usedPlatforms).map(e => e.name) */
-  const AllGenres = [...new Set(Allproducts.map(e => e.genres).flat().map(e => e.name))]
-  const AllPlataforms = [...new Set(Allproducts.map(e => e.platforms).flat().map(e => e.name))]
+  // const AllGenres = [...new Set(Allproducts.map(e => e.genres).flat().map(e => e.name))]
+  // const AllPlataforms = [...new Set(Allproducts.map(e => e.platforms).flat().map(e => e.name))]
 
   const prueba = ["Puzzle", "Action", "Adventure", "Shooter"]
   const prueba2 = ["PC", "Linux", "Xbox One", "Nintendo Switch"]
