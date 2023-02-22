@@ -3,10 +3,12 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import SearchBar from "../SearchBar/SearchBar"
 import logo from "../../images/logo/sin fondo/logo.png"
 import "./NavBar.css"
+import "../SearchBar/SearchBar.css"
 import { logout } from './NavBarHelper'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { getUsers, resetUser, addToCart, removeFromCart, getUserOrders } from '../../redux/actions'
+
 
 import profilePic from "../../images/profile21.png"
 
@@ -88,21 +90,6 @@ const NavBar = () => {
               </li>
             </NavLink>
 
-
-            <NavLink to="/about" className='link' activeStyle={{
-              fontWeight: "bold",
-              fontSize: "1rem"
-            }}>
-
-              <li class="nav-item active">
-                <span class="nav-link active text-light title" aria-current="page"
-                  activeStyle={{
-                    fontWeight: "bold",
-
-                  }} > About</span>
-              </li>
-            </NavLink>
-
             {
               user && !user.isAdmin && (<NavLink to="/my_store" className='link' activeStyle={{
                 fontWeight: "bold",
@@ -138,6 +125,20 @@ const NavBar = () => {
                 </li>
               </Link>
               : null}
+
+            <NavLink to="/about" className='link' activeStyle={{
+              fontWeight: "bold",
+              fontSize: "1rem"
+            }}>
+
+              <li class="nav-item active">
+                <span class="nav-link active text-light title" aria-current="page"
+                  activeStyle={{
+                    fontWeight: "bold",
+
+                  }} > About</span>
+              </li>
+            </NavLink>
 
 
             {user ?
@@ -182,7 +183,7 @@ const NavBar = () => {
           {location.pathname === "/home" && <SearchBar />}
           {location.pathname.includes('/detail') &&
             <NavLink to="/home">
-              <input class="btn btn-secondary" type="button" value="Go Back" />
+              <input class="btn btn-secondary searchButton" type="button" value="Go Back" />
             </NavLink>}
 
         </div>

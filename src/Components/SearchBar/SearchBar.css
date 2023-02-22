@@ -1,0 +1,22 @@
+.searchBar {
+  background-color: rgb(37,37,39,0.3);
+  border-radius: 2rem;
+  border-color: rgb(37,37,39);
+  color: white;
+}
+.searchBar:focus{
+  background-color: rgb(37,37,39,0.3);
+  border-color: rgb(229,141,39);
+  color: white;
+}
+.searchButton{
+  border-radius: 0.8rem;
+  background-color: rgb(37,37,39,0.3);
+  color: gray;
+  border-color: rgb(0, 0, 0);
+  border-color: rgb(37,37,39);
+}
+.searchButton:hover{
+  /* background-color: white; */
+  background-color: rgb(37,37,39);
+}

@@ -16,8 +16,6 @@ import shoppingCard from '../../../images/shopping-cart.png'
 import style from "./ProductCard.css";
 
 
-
-
 export default function ProductCard({ id, id_api, name, img, rating, platforms, price, fromApi, isDisabled, genres }) {
   let cart = useSelector(state => state.cart);
   let user = useSelector(state => state.users);
@@ -170,11 +168,7 @@ export default function ProductCard({ id, id_api, name, img, rating, platforms, 
     <div class='bg-transparent cardBigContainer'>
       <div class="card-body headerContainer">
 
-        <div class="d-flex  justify-content-between headerMatrics   ">
-          <div class="">
-            {user?.user?.id && !user?.user?.isAdmin && <FavouriteButton class="heartButton" id={id} />}
-          </div>
-        </div>
+        
 
         <div /*class="card-body "*/>
           <Link class='decoration' to={fromApi || isDisabled ? `/home` : `/detail/${id}`}>
@@ -203,6 +197,7 @@ export default function ProductCard({ id, id_api, name, img, rating, platforms, 
                 
               )) : null
             }
+        
           </div>
           {/* <h6 class="card-title fs-6 ">{name} </h6> */}
               </div>
@@ -237,18 +232,26 @@ export default function ProductCard({ id, id_api, name, img, rating, platforms, 
                 {/* </p> */}
                 <div class="d-flex align-items-center justify-content-center">
                   {isDisabled || fromApi ?
-                    <span>No available</span> :
-
+                    <span>Not available</span> :
                     (
                     <div class="flex-row mt-3 w-100">
-                        <div class="w-100">
-                          <div class="text-truncate titleBg" style={{width:"max-content", maxWidth:"13rem"}}>{name}</div>
+                        <div class="w-100 d-flex gap-3">
+                          <div class="w-90">
+                            <div class="text-truncate titleBg" style={{width:"max-content", maxWidth:"11rem"}}>{name}</div>
+                          </div>
+                          <div class='w-10'>
+                            <div class="d-flex mt-1 justify-content-between headerMatrics   ">
+                              <div class="">
+                                {user?.user?.id && !user?.user?.isAdmin && <FavouriteButton class="heartButton" id={id} />}
+                              </div>
+                            </div>
+                          </div>
                         </div>
 
                           {!adquiridos && !user?.user?.isAdmin ? 
-                          <div class="d-flex w-100 mt-2 justify-content-between" name="cart" onClick={(e) => handleClick(e)}>
+                          <div class="d-flex w-100 mt-2 justify-content-between" >
                             <div className='price'>${price}</div>
-                            <button disabled={fromApi || isDisabled ? true : false} class="buttonCart">
+                            <button disabled={fromApi || isDisabled ? true : false} class="buttonCart" name="cart" onClick={(e) => handleClick(e)}>
                               {/* <img src={shoppingCard} name="cart" alt="" style={{ maxWidth: '2rem', maxHeight: '2rem' }} /> */}
                                 Add to cart
                               </button>

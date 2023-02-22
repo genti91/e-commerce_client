@@ -69,8 +69,8 @@ h6 {
 .card-body:hover {
     /* box-shadow: 0 6px 10px rgba(3, 43, 44, 0.7), */
         /* 0 0 6px rgb(0, 255, 128); */
-    transform: scale(0.99);
-    transition: 0.6s;
+    /* transform: scale(0.99); */
+    /* transition: 0.6s; */
 }
 
 .buttonCart {
@@ -87,7 +87,7 @@ h6 {
 }
 
 .buttonCart:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     /* box-shadow: 0 6px 10px rgba(3, 43, 44, 0.7), */
         /* 0 0 6px rgb(255, 251, 5); */
     /* border: 1.5px rgb(0, 200, 255) solid; */
@@ -134,8 +134,7 @@ h6 {
 
 
 .conteinerimg{
- background-size: 23rem auto;
- background-repeat:cover;
+ background-size: cover;
  background-position: center;
  height: 13.5rem;
  width: 13.5rem;

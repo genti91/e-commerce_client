@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { clear, searchProduct, setCurrentPage } from "../../redux/actions.js"
+import "./SearchBar.css"
 
 const SearchBar = ({button}) => {
   let [name, setName] = useState("");
@@ -30,12 +31,12 @@ const SearchBar = ({button}) => {
     <div class="d-flex">
       <div>
         <form class="d-flex" role="search" onSubmit={handleSubmit}>
-          <input class="form-control me-2" type="search" placeholder="Search a videogame..." required aria-label="Search" value={name} onChange={handleChange} />
-          <button class={`btn ${buttonStyle}`} type="submit">Search</button>
+          <input class="form-control me-2 searchBar" type="search" placeholder="Search a video game..." required aria-label="Search" value={name} onChange={handleChange} />
+          <button class={`btn ${buttonStyle} searchButton`} type="submit">Search</button>
         </form>
       </div>
       <div className="clear">
-        <button class={`btn ${buttonStyle}`} onClick={handleClick}>Clear</button>
+        <button class={`btn ${buttonStyle} searchButton`} onClick={handleClick}>Clear</button>
       </div>
     </div>
   )
