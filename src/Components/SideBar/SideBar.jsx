@@ -90,9 +90,9 @@ export default function SideBar() {
   return (
     <div class='container_sideBar'>
       <div >
-        <small>Genres</small>
-        <select class="form-select" aria-label="Default select example" style={{ fontSize:"15px",marginRight: 'auto', marginLeft: 'auto', backgroundColor:"#212529", color: "white"}} onChange={(e) => handleFilterByGenre(e)}>
-          <option value="default">Genres</option>
+        <small>Categories</small>
+        <select class="form-select" aria-label="Default select example" style={{ fontSize:"15px",marginRight: 'auto', marginLeft: 'auto', backgroundColor:"#212529", color: "white", border: "none"}} onChange={(e) => handleFilterByGenre(e)}>
+          <option value="default">Categories</option>
           {genres.length && genres.map(e => (
             <option key={e.name} value={e}>{e}</option>
           ))}
@@ -100,7 +100,7 @@ export default function SideBar() {
       </div>
       <div style={{marginTop: "0.6rem"}}>
         <small>Platforms</small>
-        <select class="form-select" aria-label="Default select example" style={{ fontSize:"15px", marginRight: 'auto', marginLeft: 'auto', backgroundColor:"#212529", color: "white"}} onChange={(e) => handleFilterByPlatforms(e)}>
+        <select class="form-select" aria-label="Default select example" style={{ fontSize:"15px", marginRight: 'auto', marginLeft: 'auto', backgroundColor:"#212529", color: "white", border: "none"}} onChange={(e) => handleFilterByPlatforms(e)}>
           <option value="default">Platforms</option>
           {platforms.length && platforms.map(e => (
             <option key={e.name} value={e}>{e}</option>
@@ -109,7 +109,7 @@ export default function SideBar() {
       </div>
       <div style={{marginTop: "0.6rem"}}>
         <small>ESRB</small>
-        <select class="form-select" aria-label="Default select example" style={{fontSize:"15px", marginRight: 'auto', marginLeft: 'auto', backgroundColor:"#212529", color: "white" }} onChange={(e) => esrbContent(e)}>
+        <select class="form-select" aria-label="Default select example" style={{fontSize:"15px", marginRight: 'auto', marginLeft: 'auto', backgroundColor:"#212529", color: "white", border: "none"}} onChange={(e) => esrbContent(e)}>
           <option value="default">ESRB Rating</option>
           {esrb?.map((esrb, index) => (
             <option key={index} value={esrb}> {esrb} </option>

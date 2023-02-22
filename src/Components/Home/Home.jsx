@@ -22,7 +22,7 @@ function Home() {
     let searchered = useSelector(state => state.searchered);
     let dispatch = useDispatch();
     let currentPage = useSelector((state) => state.currentPage);
-    let [gamesPerPage, setgamesPerPage] = useState(10);
+    let [gamesPerPage, setgamesPerPage] = useState(9);
     const indexOfLastGame = currentPage * gamesPerPage;
     const indexOfFirstGame = indexOfLastGame - gamesPerPage;
     const currentGames = searchered.length ? searchered.slice(indexOfFirstGame, indexOfLastGame) : games.slice(indexOfFirstGame, indexOfLastGame);
@@ -51,12 +51,12 @@ function Home() {
     },[user]);
 
     return (
-        <div class="d-sm-flex container-fluid cardsAndFilter">
+        <div class="d-sm-flex container-fluid cardsAndFilter justify-content-center">
             <div style={{ marginRight: '15px', marginLeft: '30px', marginTop: '46px', width: '122px' }}>
                 <SideBar />
             </div>
 
-            <div style={{ width: '1300px' }}>
+            <div style={{ width: '60%' }}>
 
                 <div class='ml-2'>
                     <Filters />
@@ -88,19 +88,19 @@ function Home() {
                 />
 
             </div>
-            <div className='bannerhome'>
-                <Link to={user.user?"/detail/2aa2198c-bbba-4e74-9726-a886cd1cda75":"/login"}>
-                    <img style={{width:"17rem", height: "auto", marginBottom: "50px"}} src={user.user? banner : banner2} alt="banner"/>
-                </Link>
-                <div style={{marginLeft: '4rem'}}>
-                <MyChatBot
-                    config={config}
-                    messageParser={MessageParser}
-                    actionProvider={ActionProvider}
+            {/* <div className='bannerhome'> */}
+            {/*     <Link to={user.user?"/detail/2aa2198c-bbba-4e74-9726-a886cd1cda75":"/login"}> */}
+            {/*         <img style={{width:"17rem", height: "auto", marginBottom: "50px"}} src={user.user? banner : banner2} alt="banner"/> */}
+            {/*     </Link> */}
+            {/*     <div style={{marginLeft: '4rem'}}> */}
+            {/*     <MyChatBot */}
+            {/*         config={config} */}
+            {/*         messageParser={MessageParser} */}
+            {/*         actionProvider={ActionProvider} */}
 
-                />
-                </div>
-            </div>
+            {/*     /> */}
+            {/*     </div> */}
+            {/* </div> */}
         </div>
 
     )

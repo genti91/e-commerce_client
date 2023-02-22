@@ -122,7 +122,7 @@ export default function ProductDetails() {
                   </button>)}
               </div>
               <div class="m-2">
-                {!user?.user?.isAdmin && <FavouriteButton id={id} />}
+                {user?.user?.id && !user?.user?.isAdmin && <FavouriteButton id={id} />}
 
               </div>
             </div>
@@ -172,14 +172,16 @@ export default function ProductDetails() {
             </div>
 
             <div className='verticalScrollable1'>
-              {reviews && reviews.map((e) => {
-
-                // return (<ReviewCard username={e.username} rating={e.rating} description={e.description} userImg={e.profile_pic} />)
-
-                return (<ReviewCard key={e.i} username={e.username} rating={e.rating} description={e.description} userImg={e.profile_pic} id={e.id} reviews={reviews} setReviews={setReviews} />)
-
-              })}
+              {reviews && reviews.map((e) => (
+                <ReviewCard key={e.i} username={e.username} rating={e.rating} description={e.description} userImg={e.profile_pic} id={e.id} reviews={reviews} setReviews={setReviews} />)
+              )}
             </div>
+
+            {reviews?.length == 0 && 
+              <div class="project-info-box">
+                This game doesn't have reviews yet.
+              </div>
+            }
 
           </div>
 

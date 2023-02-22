@@ -9,9 +9,7 @@
   padding: 30px 40px;
   border-radius: 5px;
   color: rgb(255, 253, 239);
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 6px 10px rgba(3, 43, 44, 0.7),
-    0 0 6px rgb(40, 141, 224);
+  background-color: rgb(37,37,39,0.3);
 }
 
 .project-info-box p {
@@ -95,14 +93,9 @@ strong {
 }
 
 .reviewContainer {
-  background-color: #212529;
-  max-width: 300px;
-  max-height: 600px;
   margin-bottom: 20px;
   color: rgb(255, 253, 239);
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 6px 10px rgba(3, 43, 44, 0.7),
-    0 0 6px rgb(40, 141, 224);
+  background-color: rgb(37,37,39,0.3);
 }
 
 .screenshots{

@@ -36,7 +36,13 @@ import Chatbot from 'react-chatbot-kit';
 function App() {
 let users = useSelector(state=>state.users);
   return (
+    <>
     <div className="App">
+        <div className='background'>
+          <div className='ball1'/>
+          <div className='ball2'/>
+          <div className='gloss'/> 
+        </div>
         <Route path="/" component={NavBar}/>
       <Switch>
         <Route exact path="/" component={LandingPage} />
@@ -66,6 +72,7 @@ let users = useSelector(state=>state.users);
         <Footer />
         </div>
     </div>
+    </>
   );
 }
 

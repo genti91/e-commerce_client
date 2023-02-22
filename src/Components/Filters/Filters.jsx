@@ -77,7 +77,7 @@ function Filters() {
       <div className={styles.posicion}>
         {/* Sort by: */}
         <select /* class="form-select" */ style={{ fontSize:"13px",backgroundColor:"#212529", color: "white", border: "none", padding: '0.3rem'}} onChange={(e) => handlerChange(e)}> {/* propuesta rango de precio */}
-        <option disabled={false} value="default">Order by...</option>
+        <option disabled={false} value="default">Sort by...</option>
           <option style={{ fontSize:"14px",backgroundColor:"#212529", color: "white", border: "none"}} value="Highest_Price">Price: Higher to lower</option>
           <option style={{ fontSize:"14px",backgroundColor:"#212529", color: "white", border: "none"}} value="Lowest_Price">Price: Lower to Higher</option>
           <option style={{ fontSize:"14px",backgroundColor:"#212529", color: "white", border: "none"}} value="higher">Rating: Higher to lower</option>

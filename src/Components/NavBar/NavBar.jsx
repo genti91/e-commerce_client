@@ -3,10 +3,12 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import SearchBar from "../SearchBar/SearchBar"
 import logo from "../../images/logo/sin fondo/logo.png"
 import "./NavBar.css"
+import "../SearchBar/SearchBar.css"
 import { logout } from './NavBarHelper'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { getUsers, resetUser, addToCart, removeFromCart, getUserOrders } from '../../redux/actions'
+
 
 import profilePic from "../../images/profile21.png"
 
@@ -60,12 +62,12 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark " style={{ backgroundColor: "#191D2A", borderRadius: '0' }}>
+    <nav className="navbar navbar-expand-md navbar-dark" style={{ borderRadius: '0' }}>
 
       <div class="container-fluid  mt-2">
         <NavLink to="/" className='link'>
-          <img class="logo " src={logo} />
-          <span class="titleLogo">   GAM<span class="letraE">E</span>-COMMERCE</span>
+          {/* <img class="logo " src={logo} /> */}
+          <span class="titleLogo ml-3">   GAM<span class="letraE">E</span>-COMMERCE</span>
         </NavLink>
         <button onClick={() => handleClick()} class="navbar-toggler " type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -79,26 +81,12 @@ const NavBar = () => {
             }}>
 
               <li class="nav-item active">
-                <span class="nav-link active text-light title" aria-current="page"
+                <span class="nav-link active text-light title" style={{color:"#727478"}} aria-current="page"
                   activeStyle={{
                     fontWeight: "bold",
+                    color: "#825827"
 
                   }} > Home</span>
-              </li>
-            </NavLink>
-
-
-            <NavLink to="/about" className='link' activeStyle={{
-              fontWeight: "bold",
-              fontSize: "1rem"
-            }}>
-
-              <li class="nav-item active">
-                <span class="nav-link active text-light title" aria-current="page"
-                  activeStyle={{
-                    fontWeight: "bold",
-
-                  }} > About</span>
               </li>
             </NavLink>
 
@@ -137,6 +125,20 @@ const NavBar = () => {
                 </li>
               </Link>
               : null}
+
+            <NavLink to="/about" className='link' activeStyle={{
+              fontWeight: "bold",
+              fontSize: "1rem"
+            }}>
+
+              <li class="nav-item active">
+                <span class="nav-link active text-light title" aria-current="page"
+                  activeStyle={{
+                    fontWeight: "bold",
+
+                  }} > About</span>
+              </li>
+            </NavLink>
 
 
             {user ?
@@ -181,7 +183,7 @@ const NavBar = () => {
           {location.pathname === "/home" && <SearchBar />}
           {location.pathname.includes('/detail') &&
             <NavLink to="/home">
-              <input class="btn btn-secondary" type="button" value="Go Back" />
+              <input class="btn btn-secondary searchButton" type="button" value="Go Back" />
             </NavLink>}
 
         </div>

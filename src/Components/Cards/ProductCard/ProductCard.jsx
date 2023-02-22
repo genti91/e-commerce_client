@@ -16,8 +16,6 @@ import shoppingCard from '../../../images/shopping-cart.png'
 import style from "./ProductCard.css";
 
 
-
-
 export default function ProductCard({ id, id_api, name, img, rating, platforms, price, fromApi, isDisabled, genres }) {
   let cart = useSelector(state => state.cart);
   let user = useSelector(state => state.users);
@@ -168,53 +166,14 @@ export default function ProductCard({ id, id_api, name, img, rating, platforms, 
 
   return (
     <div class='bg-transparent cardBigContainer'>
-      {
+      <div class="card-body headerContainer">
 
-        /*<div class="card hover-overlay hover-zoom" style={{ maxWidth: "18rem", marginBottom: '25px', maxHeight: '18rem' }}>
-          <Link to={fromApi || isDisabled ? `/home` : `/detail/${id}`}>*/
-
-        /*  <div class="card hover-overlay hover-zoom" style={{ maxWidth: "18rem", marginBottom: '25px', maxHeight: '18rem' }}>
-           <Link  to={fromApi || isDisabled ?`/home`:`/detail/${id}`}>
-             <img class="card-img-top" style={{ maxWidth: '18rem', maxHeight: '10rem' }} src={img} alt="product img" />
-           </Link>
-           <div class="card-body" >
-             <Link to={fromApi || isDisabled ? `/home` : `/detail/${id}`} style={{ textDecoration: "none" }}>
-               <h6 class="card-title">{name}</h6>
-             </Link>
-             <div class="d-flex flex-row align-items-center justify-content-center">
-               <FavouriteButton id={id} />
-               <div>
-                 {isDisabled || fromApi ?
-                   <span>No stock</span> :
-                   <span class="card-text bg-secondary m-2 p-2 text-light">
-                     ${price}
-                   </span>}
-                 </div>
-                 <div>
-                   <button disabled={fromApi || isDisabled?true:false} onClick={(e) => handleClick(e)} value="cart" class="btn btn-primary">Cart</button>
-                 </div>
-               {foundCart&&<button onClick={(e) => handleClick(e)} type="button" class="btn-close" value="remove" aria-label="Close"></button>}
-             </div>
-           </div>
-         </div> */
-      }
-
-      <div class="card-body headerContainer " style={{ width: '35rem', height: '15rem' }}>
-
-        <div class="d-flex  justify-content-between mt-2 headerMatrics   ">
-          <div class="mt-2 ">
-            {/* <h6 class="card-title fs-6 ">{name} </h6> */}
-          </div>
-
-          <div class="">
-            {user?.user?.id && !user?.user?.isAdmin && <FavouriteButton class="heartButton" id={id} />}
-          </div>
-        </div>
+        
 
         <div /*class="card-body "*/>
           <Link class='decoration' to={fromApi || isDisabled ? `/home` : `/detail/${id}`}>
-            <div class=" d-flex justify-content-around mt-2 cardBigContainer">
-              <div class="d-flex flex-column conteinerimg" style={{backgroundImage: `url(${img})`}}>
+            <div class="justify-content-around flex-column">
+              <div class="d-flex flex-column conteinerimg" style={{backgroundImage: `url(${img})`, borderRadius: "10px"}}>
                     {/* <img class=" card-img-top d-flex justify-content-start align-items-center max-height-5 img-fluid" style={{ maxWidth: '50%', maxHeight: '9rem' }} src={img} alt="product img" /> */}
                     
               <div class="d-flex p-2 w-auto marginTitle " >
@@ -238,57 +197,68 @@ export default function ProductCard({ id, id_api, name, img, rating, platforms, 
                 
               )) : null
             }
+        
           </div>
-          <h6 class="card-title fs-6 ">{name} </h6>
+          {/* <h6 class="card-title fs-6 ">{name} </h6> */}
               </div>
               <div>
 
                 {/* <span class="card-text bg-secondary m-2 p-2 text-light">
                   {rating}
                   </span> */}
-                <div class="d-flex justify-content-around" >
+                {/* <div class="d-flex justify-content-around" > */}
 
-                  {
-                    platformsArr.map((e, i) => {
-                      let img;
-                      if (e === 'PC') img = pc
-                      if (e === 'Xbox') img = xboxImg
-                      if (e === 'PlayStation') img = playStation
-                      return (
-                        <img
-                          class="platformPic"
-                          style={{ maxWidth: '1.5rem', maxHeight: '1.5rem', marginRight: "15px", marginLeft: "15px" }}
-                          src={img}
-                          alt="imggg"
-                        />
-                      )
-                    })
-                  }
+                {/*   { */}
+                {/*     platformsArr.map((e, i) => { */}
+                {/*       let img; */}
+                {/*       if (e === 'PC') img = pc */}
+                {/*       if (e === 'Xbox') img = xboxImg */}
+                {/*       if (e === 'PlayStation') img = playStation */}
+                {/*       return ( */}
+                {/*         <img */}
+                {/*           class="platformPic" */}
+                {/*           style={{ maxWidth: '1.5rem', maxHeight: '1.5rem', marginRight: "15px", marginLeft: "15px" }} */}
+                {/*           src={img} */}
+                {/*           alt="imggg" */}
+                {/*         /> */}
+                {/*       ) */}
+                {/*     }) */}
+                {/*   } */}
 
-                </div>
-                <p class='d-flex justify-content-around pt-4 flex-wrap w-100'>
-                  {genres.slice(0,3).map((e, index) => <p key={index} class=" bg-transparent text1 d-flex p-1 justify-content-center  ">{e.name === "Massively Multiplayer"? "Massive mult.." : e.name}</p>)}
-                  {genres.length > 3 ? <p class=" bg-transparent text1 d-flex p-1 justify-content-center  ">, And more... </p> : null}
-                </p>
+                {/* </div> */}
+                {/* <p class='d-flex justify-content-around pt-4 flex-wrap w-100'> */}
+                {/*   {genres.slice(0,3).map((e, index) => <p key={index} class=" bg-transparent text1 d-flex p-1 justify-content-center  ">{e.name === "Massively Multiplayer"? "Massive mult.." : e.name}</p>)} */}
+                {/*   {genres.length > 3 ? <p class=" bg-transparent text1 d-flex p-1 justify-content-center  ">, And more... </p> : null} */}
+                {/* </p> */}
                 <div class="d-flex align-items-center justify-content-center">
                   {isDisabled || fromApi ?
-                    <span>No available</span> :
-
+                    <span>Not available</span> :
                     (
-                    <div class="d-flex align-items-center mt-4">
-                        <h6 class="titleBg pt-2">
-                          ARS$ {price} </h6>
+                    <div class="flex-row mt-3 w-100">
+                        <div class="w-100 d-flex gap-3">
+                          <div class="w-90">
+                            <div class="text-truncate titleBg" style={{width:"max-content", maxWidth:"11rem"}}>{name}</div>
+                          </div>
+                          <div class='w-10'>
+                            <div class="d-flex mt-1 justify-content-between headerMatrics   ">
+                              <div class="">
+                                {user?.user?.id && !user?.user?.isAdmin && <FavouriteButton class="heartButton" id={id} />}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
-                          {!adquiridos && !user?.user?.isAdmin ? <div name="cart" onClick={(e) => handleClick(e)}>
-
-                            <button disabled={fromApi || isDisabled ? true : false} class=" text1 buttonCart">
-                              <img src={shoppingCard} name="cart" alt="" style={{ maxWidth: '2rem', maxHeight: '2rem' }} />
+                          {!adquiridos && !user?.user?.isAdmin ? 
+                          <div class="d-flex w-100 mt-2 justify-content-between" >
+                            <div className='price'>${price}</div>
+                            <button disabled={fromApi || isDisabled ? true : false} class="buttonCart" name="cart" onClick={(e) => handleClick(e)}>
+                              {/* <img src={shoppingCard} name="cart" alt="" style={{ maxWidth: '2rem', maxHeight: '2rem' }} /> */}
+                                Add to cart
                               </button>
                           </div> : null}
                     </div>
                     )
                   }
-                  {/* </div> */}
                 </div>
               </div>
             </div>
