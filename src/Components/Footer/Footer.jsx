@@ -13,24 +13,6 @@ export default function About() {
         <nav className={styles.footer} style={{ display: display, borderRadius: '0' }}>
             {location.pathname === "/admin" ? <div></div> :
               <div>
-                 
-    {/* <div class="container p-4 pb-0"> */}
-    {/*   <section class=""> */}
-    {/*     <p class="d-flex justify-content-center align-items-center"> */}
-    {/*       <span class="me-3">About</span> */}
-    {/*       <button type="button" class="btn btn-outline-light btn-rounded"> */}
-    {/*         Github */}
-    {/*       </button> */}
-    {/*     </p> */}
-    {/*   </section> */}
-    {/* </div> */}
-
-    {/* <div class="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}> */}
-    {/*   © 2022 Copyright:  */}
-    {/*   <a class="text-white"> GAME-COMMERCE</a> */}
-    {/* </div> */}
-
-
                 <div class="d-flex w-100 justify-content-center p-5">
                     <div class={`p-2 ${styles.footerBlocks}`}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-envelope" viewBox="0 0 16 16">
