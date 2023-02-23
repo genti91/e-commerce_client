@@ -74,15 +74,17 @@
   box-shadow: 0px 0px 200px 50px red;
 }
 .gloss{
-  position: absolute;
+  position: sticky;
   top: 0;
   right: 0;
   height: 100%;
   width: 100%;
   background: rgb(18,18,18,0.95);
-  backdrop-filter: blur(70px);
-  -webkit-backdrop-filter: blur(70px);
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
   overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
   /* background-size: 100% 100%; */
 }
 
